@@ -1,0 +1,9 @@
+
+  <h2 *ngIf="studentArr.length > 0">Student item</h2>
+  <ul class="list-group" *ngFor="let student of   studentArr; let i = index">
+    <li class="list-group-item">სახელი: {{ student.name }}</li>
+    <li class="list-group-item">გვარი: {{ student.lastName }}</li>
+    <li class="list-group-item">პირადი ნომერი: {{ student.id }}</li>
+    <button type="button" class="btn-danger" (click)='delete(i)' >წაშლა</button>
+    <button type="button" class="btn-primary" (click)='edit(i)' >რედაქტირება</button>
+  </ul>

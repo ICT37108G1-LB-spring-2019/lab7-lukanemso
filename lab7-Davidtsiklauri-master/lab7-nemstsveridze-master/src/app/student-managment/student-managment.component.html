@@ -1,0 +1,32 @@
+<form [formGroup]="myForm">
+  <div class="form-group">
+    <label for="exampleInputEmail1">სახელი</label>
+    <input class="form-control" placeholder="სახელი" formControlName="name" />
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">გვარი</label>
+    <input
+      class="form-control"
+      placeholder="გვარი"
+      formControlName="lastName"
+    />
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">პირადი ნომერი</label>
+    <input
+      class="form-control"
+      placeholder="პირადი ნომერი"
+      formControlName="id"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary" *ngIf='!editStu' (click)= "onSubmit()">შენახვა</button>
+  <button   class="btn btn-primary" *ngIf='editStu' (click)='update()' >ცვლილებების შენახვა</button>
+  <button   class="btn btn-primary" *ngIf='editStu' (click)='cancel()'>გაუქმება</button>
+</form>
+
+<div>
+<app-student-list   [studentArr]="studentArr">
+
+  
+</app-student-list>
+</div>
